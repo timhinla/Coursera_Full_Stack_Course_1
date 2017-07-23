@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Dating Website</title>
+<meta name="author" content="Tim Herrin">
+
+<style>
+	
+	fieldset {
+		background-color: lightyellow;
+		border: 10px solid yellow;
+		width: 720px;
+		margin-bottom: 10px;
+	}
+
+	label {
+		width: 180px;
+		display: inline-block;
+		text-align: right; 
+		vertical-align: top;
+	}
+
+	label:hover, input:hover {
+		font-size:40px;
+	}
+
+	textarea {
+		width: 360px;
+		height: 50px;
+	}
+
+	span {
+		display: inline-block;
+		width: 40px;
+		vertical-align: top;
+		text-align: center;
+		color: yellow;
+	}
+
+	#shortPoor {
+		background-color: red;
+	}
+
+	#tallRich {
+		background-color: green;
+	}
+
+	#preview {
+		width: 50px;
+	}
+
+</style>
+
+
+</head>
+
+<body>
+
+<h1>Please Enter Your Details For Our Website!</h1>
+
+<form action="https://ihome.ust.hk/~rossiter/cgi-bin/show_everything.php" method="get" enctype="multipart/form-data">
+	<fieldset>
+		<legend>Your Face</legend>
+		<label for="pic">Your Image: </label><input type="file" id="pic" name="clientPic" required>
+		<br>
+		<label for="preview">Image Preview: </label><img src="file" id="preview" name="picPreview">
+	</fieldset>
+
+	<fieldset>
+		<legend>Your General Details</legend>
+		<label for="name">Name: </label><input type="text" id="name" name="clientName" placeholder="enter full name" required>
+		<br>
+		<label for="gender">Gender: </label>
+			<input type="radio" id="gender" name="clientGender" value="male" required>Male
+			<input type="radio" id="gender" name="clientGender" value="female" required>Female
+		<br>
+		<label for="age">Age: </label><input type="number" id="age" name="clientAge" required>
+		<br>
+		<label for="DOB">Date of Birth: </label><input type="date" id="DOB" name="clientDOB">
+		<br>
+		<label for="favCol">Favourite Color: </label><input type="color" id="favCol" name="clientFavCol">
+		<br>
+		<label for="country">Which Country: </label><select id="country" name="clientCountry">
+			<option value="noSelect"></option>
+			<option value="Argentina">Argentina</option>
+			<option value="Canada">Canada</option>
+			<option value="Hungary">Hungary</option>
+			<option value="New Zealand">New Zealand</option>
+			<option value="Zimbabwe">Zimbabwe</option>
+		</select>
+	</fieldset>
+
+	<fieldset>
+		<legend>Your Indicators</legend>
+		<label for="height">Height: </label><span id="shortPoor">Short</span><input type="range" id="height" name="clientHeight" min="0" max="100" step="5"><span id="tallRich">Tall</span>
+		<br>
+		<label for="salary">Salary: </label><span id="shortPoor">Poor</span><input type="range" id="salary" name="clientSalary" min="0" max="100" step="5"><span id="tallRich">Rich</span>
+	</fieldset>
+
+	<fieldset>
+		<legend>Your Contact Information</legend>
+		<label for="email">Email: </label><input type="email" id="email" name="clientEmail" required>
+		<br>
+		<label for="mobile">Mobile: </label><input type="tel" id="phone" name="clientPhone">
+		<br>
+		<label for="address">Address: </label><textarea id="address" name="clientAddress"></textarea>
+		<br>
+		<label for="MOC">Method of Contact: </label>
+			<input type="checkbox" id="MOC" name="clientMOC">Email
+			<input type="checkbox" id="MOC" name="clientMOC">Phone
+			<input type="checkbox" id="MOC" name="clientMOC">Text
+	</fieldset>
+
+	<input type="submit" value="submit">
+</form>
+
+<script src="https://www.cse.ust.hk/~rossiter/dating_web_site.js"></script>
+
+</body>
+</html>

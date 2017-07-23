@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<!-- 
+	The stuff that goes in the head section includes
+	  -- info about the web page
+	  -- <title> - title of web page
+	  -- style instrucions (either linked or embedded with the <style> tag)
+	  -- meta information (author, keywords, CHARACTER SET, etc)
+	  -- javascript or link to javascript that may be used (similar to linking css files)
+	  -- base instruction which informs the browser where the location of the main file is located
+-->
+
+	<meta charset="utf-8">
+	<title>Name of page goes here</title>
+	<meta name="author" content="Tim Herrin">
+
+	<script>
+
+	var color_options = ["blue", "green", "red", "yellow"];
+	var num_colors = color_options.length;
+	var answer = "rainbow";
+	var guess = "hopefully green";
+
+	function do_game(){
+		
+		/* generate the random color from our array */
+		answer = color_options[Math.floor(Math.random() * num_colors)];
+		alert("The correct color is " + answer);
+
+		/* prompt for a guess and loop until answer guessed correctly */	
+		do{
+
+			guess = prompt("I am thinking of these colors:\n\n" + color_options.join() + 
+			"\n\nWhat color am i thinking of?");
+
+		}while(guess != answer); 
+					
+	}
+
+	</script>
+
+</head>
+
+<body onload="do_game()">
+
+</body>
+</html>
