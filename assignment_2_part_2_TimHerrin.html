@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<!-- 
+	The stuff that goes in the head section includes
+	  -- info about the web page
+	  -- <title> - title of web page
+	  -- style instrucions (either linked or embedded with the <style> tag)
+	  -- meta information (author, keywords, CHARACTER SET, etc)
+	  -- javascript or link to javascript that may be used (similar to linking css files)
+	  -- base instruction which informs the browser where the location of the main file is located
+-->
+
+	<meta charset="utf-8">
+	<title>Name of page goes here</title>
+	<meta name="author" content="Tim Herrin">
+
+	<script>
+
+	var color_options = ["blue", "green", "maroon", "navy", "yellow"];
+	var num_colors = color_options.length;
+	var answer = "rainbow";
+	var guess = "polkadot"
+	var correct_guess = false;
+	var num_guesses = 0;
+
+	function do_game(){
+		
+		/* generate the random color from our array */
+		answer = color_options[Math.floor(Math.random() * num_colors)];
+		alert("The correct color is " + answer);
+
+		/* prompt for a guess and loop until answer guessed correctly */	
+		do{
+
+			guess = prompt("I am thinking of these colors:\n\n" + color_options.join() + 
+			"\n\nWhat color am i thinking of?");
+
+			/* remove any whitespace */
+			guess = guess.trim();
+
+			/* call the support function to analyze the guess */
+			check_guess();
+
+		}while(correct_guess == false); 
+					
+	}
+
+	function check_guess(){
+
+		num_guesses++;
+
+		/* check if the color guessed is in the list provided */
+		if (color_options.indexOf(guess) < 0 || color_options.indexOf(guess) > num_colors - 1 )
+			alert("I don't recognize that color!");
+
+		/* check if the color guessed is alphabetically higher than the answer */
+		else if(guess > answer)
+			alert("Your input is alphabetically higher than mine!");
+
+		/* check if the color guessed is alphabetically lower than the answer */
+		else if(guess < answer)
+			alert("Your input is alphabetically lower than mine!");
+
+		/* the correct color was guessed, so change the background and alert the user to the 
+		   number of guesses it took to get the right answer */
+		else {
+			document.body.style.background = answer;
+			correct_guess = true;			
+			alert("You are right! You took " + num_guesses + " guesses!");
+		}
+
+	}
+
+	</script>
+
+</head>
+
+<body onload="do_game()">
+
+</body>
+</html>

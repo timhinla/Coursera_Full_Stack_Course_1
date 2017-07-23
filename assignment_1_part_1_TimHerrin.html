@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Dating Website</title>
+<meta name="author" content="Tim Herrin">
+
+<style>
+
+
+</style>
+
+
+
+</head>
+
+<body>
+
+<h1>Please Enter Your Details For Our Website!</h1>
+
+<form action="https://ihome.ust.hk/~rossiter/cgi-bin/show_everything.php" method="get" enctype="multipart/form-data">
+	<fieldset>
+		<legend>Your Face</legend>
+		<label for="pic">Your Image: </label><input type="file" id="pic" name="pic" required>
+		<br>
+		<label for="preview">Image Preview: </label><img src="file" id="preview" name="preview">
+	</fieldset>
+	<br>
+
+	<fieldset>
+		<legend>Your General Details</legend>
+		<label for="name">Name: </label><input type="text" id="name" name="name" placeholder="enter full name" required>
+		<br>
+		<label for="gender">Gender: </label>
+			<input type="radio" id="gender" name="gender" value="male" required>Male
+			<input type="radio" id="gender" name="gender" value="female" required>Female
+		<br>
+		<label for="age">Age: </label><input type="number" id="age" name="age" required>
+		<br>
+		<label for="DOB">Date of Birth: </label><input type="date" id="DOB" name="DOB">
+		<br>
+		<label for="favCol">Favourite Color: </label><input type="color" id="favCol" name="favCol">
+		<br>
+		<label for="country">Which Country: </label><select id="country" name="country">
+			<option value="noSelect"></option>
+			<option value="Argentina">Argentina</option>
+			<option value="Canada">Canada</option>
+			<option value="Hungary">Hungary</option>
+			<option value="New Zealand">New Zealand</option>
+			<option value="Zimbabwe">Zimbabwe</option>
+		</select>
+	</fieldset>
+	<br>
+
+	<fieldset>
+		<legend>Your Indicators</legend>
+		<label for="height">Height: </label>Short<input type="range" id="height" name="height" min="0" max="100" step="5">Tall
+		<br>
+		<label for="salary">Salary: </label>Poor<input type="range" id="salary" name="salary" min="0" max="100" step="5">Rich
+	</fieldset>
+	<br>
+
+	<fieldset>
+		<legend>Your Contact Information</legend>
+		<label for="email">Email: </label><input type="email" id="email" name="email" required>
+		<br>
+		<label for="mobile">Mobile: </label><input type="tel" id="phone" name="phone">
+		<br>
+		<label for="address">Address: </label><textarea id="address" name="address"></textarea>
+		<br>
+		<label for="MOC">Method of Contact: </label>
+			<input type="checkbox" id="MOC" name="MOC">Email
+			<input type="checkbox" id="MOC" name="MOC">Phone
+			<input type="checkbox" id="MOC" name="MOC">Text
+	</fieldset>
+	<br>
+
+	<input type="submit" value="submit">
+</form>
+
+</body>
+</html>
